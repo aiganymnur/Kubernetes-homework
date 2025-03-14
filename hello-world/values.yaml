@@ -1,0 +1,25 @@
+deployment:
+  name1: nginx-deployment
+  name2: nginx-deployment2
+
+  image1:
+    repo: nginx
+    tag: "gcr.io/google-samples/hello-app:1.0"
+
+  image2:
+    repo: nginx2
+    tag: "gcr.io/google-samples/hello-app:2.0"
+
+  port: 8080
+  replica_num: 3
+
+
+service:
+  name1: my-service
+  name2: my-service2
+  port: 80
+  
+ingress:
+  name: minimal-ingress
+  path1: /
+  path2: /hello
