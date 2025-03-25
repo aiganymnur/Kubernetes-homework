@@ -1,0 +1,14 @@
+deployment:
+  name: nginx
+  image: nginx
+  tag: latest
+  containerPort: 80
+  replicas: 1
+  claimName: task-pv-claim
+  mountPath: "/usr/share/nginx/html"
+
+pvc:
+  name: task-pv-claim
+  accessMode: ReadWriteOnce
+  capacity: 1Gi
+  storageClassName: standard-rwo
